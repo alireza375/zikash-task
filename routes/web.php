@@ -49,8 +49,18 @@ Route::middleware(['auth'])->group(function () {
       Route::controller(PersonalController::class)->group(function(){
         Route::get('/all/personal','AllPersonal')->name('all.personal');
         Route::get('/add/personal','AddPersonal')->name('add.personal');
+        Route::post('/store/personal','StorePersonal')->name('store.personal');
       });
 
+       Route::prefix('settings')->name('settings.')->group(function () {
+        Route::get('/general-setting', [SettingsController::class, 'generalSetting'])->name('general-setting');
+
+       });
+
+    //    Route::prefix('person')->name('person.')->group(function(){
+    //     Route::get('/index','AllPersonal', [PersonalController::class, 'AllPersonal'])->name('index');
+
+    //   });
 
     Route::controller(ProductController::class)->group(function(){
         Route::get('/all/product','AllProduct')->name('all.product');

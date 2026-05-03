@@ -34,6 +34,7 @@ return new class extends Migration
             $table->time('office_start_time');
             $table->time('office_end_time');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

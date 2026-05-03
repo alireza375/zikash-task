@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Services\PersonalService;
+use App\Http\Requests\Admin\PersonalRequest;
 
 use Illuminate\Http\Request;
 
@@ -20,11 +21,17 @@ class PersonalController extends Controller
 
     }
 
-        public function AddPersonal()
+    public function AddPersonal()
     {
-        return view('backend.personal.add_personal');
 
+        return view('backend.personal.add_personal');
     }
+
+    public function StorePersonal(PersonalRequest $request)
+    {
+        // return $this->personalService->store($request);
+    }
+
 
 
     
