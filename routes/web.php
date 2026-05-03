@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PersonalController;
 use App\Http\Controllers\HomeController;
 
 
@@ -44,6 +45,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/update/category/{id}','UpdateCategory')->name('category.update');
         Route::get('/delete/category/{id}','DeleteCategory')->name('category.delete');
     });
+
+      Route::controller(PersonalController::class)->group(function(){
+        Route::get('/all/personal','AllPersonal')->name('all.personal');
+        Route::get('/add/personal','AddPersonal')->name('add.personal');
+      });
 
 
     Route::controller(ProductController::class)->group(function(){

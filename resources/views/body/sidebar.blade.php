@@ -54,9 +54,25 @@
                                 <a href="{{ route('all.product') }}">All Product</a>
                             </li>
                             <li>
-                                {{-- {{ route('add.product') }} --}}
                                 <a href="{{ route('add.product') }}">Add Product</a>
                             </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#person" data-bs-toggle="collapse">
+                        <!-- <i class="mdi mdi-cart-outline"></i> -->
+                        <i class="fa-sharp fa-solid fa-person-chalkboard"></i>
+                        <span> Person Manage </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="person">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.personal') }}">All Person</a>
+                            </li>
+
                         </ul>
                     </div>
                 </li>
