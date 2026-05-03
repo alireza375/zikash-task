@@ -52,10 +52,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/store/personal','StorePersonal')->name('store.personal');
       });
 
-       Route::prefix('settings')->name('settings.')->group(function () {
-        Route::get('/general-setting', [SettingsController::class, 'generalSetting'])->name('general-setting');
+    //    Route::prefix('settings')->name('settings.')->group(function () {
+    //     Route::get('/general-setting', [SettingsController::class, 'generalSetting'])->name('general-setting');
 
-       });
+    //    });
 
     //    Route::prefix('person')->name('person.')->group(function(){
     //     Route::get('/index','AllPersonal', [PersonalController::class, 'AllPersonal'])->name('index');

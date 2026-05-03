@@ -4,11 +4,12 @@ namespace App\Http\Services;
 
 
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class CategoryService
 {
     // Category Index
-   public function index($request)
+   public function index(Request $request)
 {
     $sort_by = $request->sort_by ?? 'id';
     $dir = $request->dir ?? 'desc';

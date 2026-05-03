@@ -23,7 +23,11 @@ class ProductController extends Controller
     {        
         return $this->productService->index($request);
     }
-    
+
+    public function ViewProduct($id)
+    {
+       return $this->productService->view($id);
+    }
     
 
     public function AddProduct(){

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Personals extends Model
 {
-    use SoftDeletes;
     //
       protected $fillable = [
         'name',
@@ -25,7 +24,7 @@ class Personals extends Model
     protected $casts = [
         'hobby' => 'array',
         'date_of_birth' => 'date',
-        'office_start_time' => 'datetime:H:i',
-        'office_end_time' => 'datetime:H:i',
+        'office_start_time' => 'datetime:H:i A',
+        'office_end_time' => 'datetime:H:i A',
     ];
 }

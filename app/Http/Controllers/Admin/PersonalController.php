@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Services\PersonalService;
 use App\Http\Requests\Admin\PersonalRequest;
-
+use App\Models\Personals;
 use Illuminate\Http\Request;
 
 class PersonalController extends Controller
@@ -15,9 +15,10 @@ class PersonalController extends Controller
         $this->personalService = $personalService;
     }
 
-    public function AllPersonal()
+    public function AllPersonal(Request $request)
     {
-        return $this->personalService->index();
+        $personals = Personals::all();
+        return view('backend.personal.personal_index', compact('personals'));
 
     }
 
@@ -29,7 +30,7 @@ class PersonalController extends Controller
 
     public function StorePersonal(PersonalRequest $request)
     {
-        // return $this->personalService->store($request);
+        return $this->personalService->store($request);
     }
 
 
